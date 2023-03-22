@@ -11,7 +11,7 @@ function changeActiveSlide(ind) {
 }
 
 prevBut.addEventListener('click', () => {
-  let activeIndex = (sliderItems.findIndex(item => item.classList.contains('slider__item_active')) - 1 + sliderItems.length) % sliderItems.length;
+  let activeIndex = (Array.from(sliderItems).findIndex(item => item.classList.contains('slider__item_active')) - 1 + sliderItems.length) % sliderItems.length;
   if (activeIndex < 0) {
     activeIndex = sliderItems.length - 1;
   }
@@ -19,7 +19,7 @@ prevBut.addEventListener('click', () => {
 });
 
 nextBut.addEventListener('click', () => {
-  let activeIndex = (sliderItems.findIndex(item => item.classList.contains('slider__item_active')) + 1) % sliderItems.length;
+  let activeIndex = (Array.from(sliderItems).findIndex(item => item.classList.contains('slider__item_active')) + 1) % sliderItems.length;
   if (activeIndex >= sliderItems.length) {
     activeIndex = 0;
   }
