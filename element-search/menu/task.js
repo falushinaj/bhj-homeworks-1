@@ -25,10 +25,7 @@ for (let i = 0; i < menuLink.length; i++) {
     if (subMenu) { // если меню с вложением
       event.preventDefault(); // запрещаем переход по ссылке
       subMenu.classList.toggle('menu_active'); // переключаем у него класс menu_active с помощью toggle
-    } else {
-      // для ссылок без подменю не запрещаем переход по ссылке
-      return true;
-    }
+    } 
   });
 }
 
