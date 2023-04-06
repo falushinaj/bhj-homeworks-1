@@ -1,3 +1,4 @@
+
 const form = document.getElementById('form');
 const progress = document.getElementById('progress');
 
@@ -11,7 +12,7 @@ form.addEventListener('submit', async (event) => {
       method: 'POST',
       body: formData,
       onUploadProgress: (progressEvent) => {
-        const percent = Math.round((progressEvent.loaded / progressEvent.total) * 100);
+        const percent = (progressEvent.loaded / progressEvent.total) * 100;
         progress.value = percent;
       }
     });
@@ -26,3 +27,6 @@ form.addEventListener('submit', async (event) => {
     alert('Произошла ошибка при загрузке файла');
   }
 });
+
+
+
